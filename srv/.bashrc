@@ -6,8 +6,6 @@
 [[ $- != *i* ]] && return
 
 set -o vi
-set editing-mode vi
-set keymap vi-command
 
 alias ls="ls -lh --color=auto"
 
