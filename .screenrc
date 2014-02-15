@@ -1,0 +1,11 @@
+attrcolor b ".I"
+#termcapinfo xterm
+term screen-256color-bce
+backtick 1 5 5 statr GNUscreen
+hardstatus alwayslastline "%1` %H %u"
+caption always "%w"
+#hardstatus alwayslastline "%H %D-%d-%M-%y !%u"
+bind f eval "caption splitonly" "hardstatus ignore"
+bind F eval "caption always" "hardstatus alwayslastline"
+#bindkey "^[[27;5;9~" next
+#bindkey "^[[27;6;9~" prev
