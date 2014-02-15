@@ -1,4 +1,5 @@
 My linux dotfiles:
+<pre>
 .vimrc
 .i3/config
 .bashrc
@@ -6,3 +7,4 @@ My linux dotfiles:
 .Xresources.zenburnish
 .xinitrc
 .screenrc
+</pre>
