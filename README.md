@@ -1,4 +1,4 @@
-My linux dotfiles:
+Linux configs etc.
 <pre>
 .vimrc
 .i3/config
