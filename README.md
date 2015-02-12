@@ -9,4 +9,5 @@ Linux configs etc.
 .Xresources.zenburnish
 .xinitrc
 .screenrc
+.cshrc
 </pre>
