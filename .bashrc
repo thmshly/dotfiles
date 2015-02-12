@@ -12,3 +12,4 @@ alias firefox='[ ! -d /tmp/.mozilla ] && cp -rp .mozilla.bck /tmp/.mozilla; fire
 PS1='[\j]\w $ '
 
 set -o vi
+export EDITOR=vim
