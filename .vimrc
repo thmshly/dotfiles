@@ -1,5 +1,6 @@
 ":let zenburn_high_Contrast=1 
 ":colorscheme zenburn
+:let g:solarized_contrast = "high"
 :colorscheme solarized
 :set background=dark
 :map <Leader>bgd :set background=dark<CR>
