@@ -70,6 +70,11 @@
 *color15:                 S_base3
 
 URxvt.scrollBar: False
-URxvt.font: xft:Dejavu Sans Mono:size=10
-!URxvt.font: size=14
+URxvt.font: xft:Liberation Mono:size=9
 URxvt.perl-ext-common: default,clipboard,vtwheel
+
+! Xft settings
+Xft.dpi:		157
+Xft.antialias:	True
+Xft.hinting:	Full
+Xft.rgba:		vrgb
