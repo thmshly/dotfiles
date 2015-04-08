@@ -175,6 +175,7 @@ bar {
 			statusline #586e75
 			#					border	bg		font
 			focused_workspace	#222222	#222222 #839496
+			active_workspace	#222222 #222222 #626F70
 			inactive_workspace  #002B36 #002B36 #7997A1 #839496 #586e75
 			urgent_workspace	#222222	#222222 #DE6214 
          }
