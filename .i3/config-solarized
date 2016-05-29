@@ -10,11 +10,22 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $hiB `./code/getUserBrightness.sh high`
+set $lowB `./code/getUserBrightness.sh low`
+set $bSpeed "44"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--19-120-75-75-C-70-iso10646-1
+#font pango:DejaVu Mono 8
 font pango:Liberation Mono 8
+#font pango:Inconsolata Sans Mono 8
+#font pango:Sans 8
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+# right-to-left text rendering, you should instead use pango for rendering and
+# chose a FreeType font, such as:
+# font pango:DejaVu Sans Mono 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -84,11 +95,14 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+bindsym $mod+b exec xbacklight -dec 5 -time $bSpeed
+bindsym $mod+Shift+b exec xbacklight -inc 5 -time $bSpeed
+
 # switch to workspace
-bindsym $mod+1 workspace 1: term;
-bindsym $mod+2 workspace 2: www;
-bindsym $mod+3 workspace 3: vim;
-bindsym $mod+4 workspace 4: ssh;
+bindsym $mod+1 workspace 1: term; exec --no-startup-id xbacklight -set $hiB -time $bSpeed;
+bindsym $mod+2 workspace 2: www; exec --no-startup-id xbacklight -set $lowB -time $bSpeed;
+bindsym $mod+3 workspace 3: vim; exec --no-startup-id xbacklight -set $hiB -time $bSpeed;
+bindsym $mod+4 workspace 4: ssh; exec --no-startup-id xbacklight -set $hiB -time $bSpeed;
 
 bindsym $mod+5 workspace 5: gimp
 bindsym $mod+6 workspace 6: offc
@@ -146,18 +160,6 @@ bindsym $mod+Shift+slash [class="URxvt"] scratchpad show
  
 bindsym $mod+l border toggle
 
-assign [title="^loading itsalltext" class="URxvt"] 9
-assign [title="^vim$" class="URxvt"] 3: vim
-assign [class="URxvt"] 1: term
-assign [class="Firefox"] 2: www
-assign [class="Gimp"] 5: gimp
-assign [class="Scribus"] 5: gimp
-assign [class="Inkscape"] 5: gimp
-assign [class="Dia"] 6: gimp
-assign [class="^libreoffice-startcenter$" instance="^VCLSalFrame.DocumentWindow$"] 6: offc
-assign [class="MuPDF"] 6: offc
-assign [class="Vlc"] 7: vlc
-
 #							border	bg		font	
 client.focused				#222222 #222222	#839496 #534573
 client.focused_inactive		#002B36 #002B36	#7997A1 #534573
@@ -175,7 +177,7 @@ bar {
 			statusline #586e75
 			#					border	bg		font
 			focused_workspace	#222222	#222222 #839496
-			active_workspace	#222222 #222222 #626F70
+			active_workspace	#222222	#222222 #626F70
 			inactive_workspace  #002B36 #002B36 #7997A1 #839496 #586e75
 			urgent_workspace	#222222	#222222 #DE6214 
          }
